@@ -34,3 +34,6 @@ C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\obj\Debug\net10.0\
 C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\obj\Debug\net10.0\CatalogoFilme.pdb
 C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\obj\Debug\net10.0\CatalogoFilme.genruntimeconfig.cache
 C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\obj\Debug\net10.0\ref\CatalogoFilme.dll
+C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\obj\Debug\net10.0\CatalogoFilme.sourcelink.json
+C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\bin\Debug\net10.0\Dapper.dll
+C:\Users\pamel\OneDrive\Documentos\Pam\Códigos\CatalogoFilme\bin\Debug\net10.0\Npgsql.dll

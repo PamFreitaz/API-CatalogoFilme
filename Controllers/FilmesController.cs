@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using CatalogoFilme.Service;
 using CatalogoFilme.Domain.Entity;
+using System.ComponentModel;
+using Microsoft.VisualBasic;
+using System.Reflection.Metadata.Ecma335;
 
 
 //using System.Runtime.Versioning;
@@ -58,14 +61,14 @@ public class FilmesController : ControllerBase
         }
         //titulo 1 sendo atualizado para titulo 2
         filmeExistente.Titulo = filmeAtualizado.Titulo;
-        filmeExistente.Genero = filmeAtualizado.Genero;
+        filmeExistente.GeneroId = filmeAtualizado.GeneroId;
         filmeExistente.Descricao = filmeAtualizado.Descricao;
         filmeExistente.Duracao = filmeAtualizado.Duracao;
         filmeExistente.Autor = filmeAtualizado.Autor;
         filmeExistente.Notas = filmeAtualizado.Notas;
 
         //agora o filme existente é titulo 2
-        await service.AtualizarFilme(Id, filmeExistente);
+        await service.AtualizarFilme(filmeExistente);
         return NoContent();
     }
 
@@ -75,4 +78,16 @@ public class FilmesController : ControllerBase
         await service.DeletarFilme(Id);
         return Ok("Filme deletado com sucesso");
     }
+
+
+    //endpoint para chamar por gênero
+    [HttpGet("porgenero/{generoid}")]
+
+    public async Task<IActionResult> ListarPorGenero (long generoid)
+    {
+        var filmes = await service.ListarFilmesPorGenero(generoid);
+        return Ok(filmes);
+    }
+
+
 }

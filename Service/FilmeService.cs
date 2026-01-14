@@ -32,14 +32,21 @@ public class FilmeService : IFilmeService
     }
 
     //Controller que sempre chama o método da service
-    public Task AtualizarFilme(long Id, Filmes filmes)
+    public Task AtualizarFilme(Filmes filmes)
     {
-        return repository.Atualizar(Id, filmes);
+        return repository.Atualizar(filmes);
     }
-    
+
     public Task DeletarFilme(long Id)
     {
         return repository.Deletar(Id);
+    }
+    
+    public Task <List<Filmes>> ListarFilmesPorGenero(long generoid)
+    {
+        return repository.ListarFilmesPeloGenero(generoid);
     }
+
+
     
 }

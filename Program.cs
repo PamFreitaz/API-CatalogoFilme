@@ -1,6 +1,7 @@
 using CatalogoFilme.Service;
 using CatalogoFilme.Domain.Repository;
 using CatalogoFilme.Domain.Entity;
+using CatalogoFilme.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +14,14 @@ builder.Services.AddScoped<IFilmeRepository, FilmeRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//configuração de conexão com o banco de dados
+builder.Services.AddSingleton<DbConnection>(sp =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    return new DbConnection(connectionString);
+});
 
 var app = builder.Build();
 
